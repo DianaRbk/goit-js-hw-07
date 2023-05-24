@@ -1,5 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+
 const gallery = document.querySelector(".gallery");
 
 function generateGalleryItemsMarkup(items) {
@@ -21,5 +22,7 @@ gallery.insertAdjacentHTML("beforeend", galleryItemMarkup);
 new SimpleLightbox(".gallery a", {
   captions: true,
   captionDelay: 250,
+  captionSelector: "img",
+  captionsData: "alt",
 });
 console.log(galleryItems);
