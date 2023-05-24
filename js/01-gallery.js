@@ -15,7 +15,17 @@ function generateGalleryItemMarkup(items) {
 }
 
 function openModal(imageUrl) {
-  const modal = basicLightbox.create(`<img src="${imageUrl}">`);
+  const modal = basicLightbox.create(
+    `<img src="${imageUrl}">`,
+    {
+      onShow: () => {
+       
+      },
+      onClose: () => {
+       
+      }
+    }
+  );
   modal.show();
 
   window.addEventListener("keydown", closeModalOnEscape);
