@@ -19,13 +19,14 @@ function openModal(imageUrl) {
     `<img src="${imageUrl}">`,
     {
       onShow: () => {
-       
+        window.addEventListener("keydown", closeModalOnEscape);
       },
       onClose: () => {
-       
+        window.removeEventListener("keydown", closeModalOnEscape);
       }
     }
-  );
+    );
+  
   modal.show();
 
   window.addEventListener("keydown", closeModalOnEscape);
@@ -33,7 +34,7 @@ function openModal(imageUrl) {
   function closeModalOnEscape(e) {
     if (e.code === "Escape") {
       modal.close();
-      window.removeEventListener("keydown", closeModalOnEscape);
+      
     }
   }
 }
